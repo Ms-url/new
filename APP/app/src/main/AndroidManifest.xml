@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APP">
         <activity android:name=".Frist"/>
-        <activity android:name=".Getpasswordback"/>
-
+        <activity android:name=".Getpasswordback"
+        android:theme="@style/Theme.AppCompat.Dialog">
+    </activity>
         <activity android:name=".MainActivity2"/>
-        <activity android:name=".Activity2"
-            android:theme="@style/Theme.AppCompat.Dialog">
-        </activity>
+        <activity android:name=".Activity2"/>
+
         <activity android:name=".Register"
             android:theme="@style/Theme.AppCompat.Dialog">
         </activity>

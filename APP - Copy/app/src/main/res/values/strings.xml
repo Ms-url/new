@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">APP</string>
+    <string name="提示">
+        行列式计算请用空格将元素格开。
+
+    </string>
+</resources>

@@ -7,12 +7,13 @@
     tools:context=".Fragment_3">
 
     <Button
+        android:id="@+id/bt_1"
         android:layout_width="316dp"
         android:layout_height="196dp"
         android:text="这是一个并没有什么用的按钮"
-        android:textColor="#170505"
+        android:textColor="#4CAF50"
         android:textSize="35dp"
-        app:backgroundTint="#FFEB3B"
+        app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

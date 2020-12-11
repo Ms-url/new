@@ -40,7 +40,7 @@ private String user;
                 }
                 else {
                 SharedPreferences.Editor save_data = getSharedPreferences("user_data", MODE_PRIVATE).edit();
-                save_data.putString("Trump","20201122");
+                save_data.putString("Trump","58674288");
                 save_data.apply();
                 }
                 setResult(RESULT_OK,intent);
