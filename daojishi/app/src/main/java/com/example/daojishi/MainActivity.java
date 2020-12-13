@@ -2,6 +2,7 @@ package com.example.daojishi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements Runnable{
     private TextView t1;
     private TextView t2;
     private TextView t3;
+    private Button bt_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,17 @@ public class MainActivity extends AppCompatActivity implements Runnable{
         setContentView(R.layout.activity_main);
         t3=findViewById(R.id.A2_textView_xia);
         bt_boom=findViewById(R.id.bt_boom);
+        bt_2=findViewById(R.id.M_bt);
         t1=findViewById(R.id.A2_textView_l);
         t3=findViewById(R.id.A2_textView_shang);
+
+        bt_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,second.class);
+                startActivity(intent);
+            }
+        });
 
         mainHandler=new Handler(){
             @Override
