@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/sport2"
         android:supportsRtl="true"
         android:theme="@style/Theme.APP">
-        <activity android:name=".jieche"></activity>
+        <activity android:name=".boom"></activity>
+        <activity android:name=".jieche" />
         <activity android:name=".Determination" />
         <activity android:name=".Frist" />
         <activity

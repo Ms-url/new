@@ -65,20 +65,20 @@ public class Frist extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Frist.this,Activity2.class);
-                startActivity(intent);
+              //  Intent intent=new Intent(Frist.this,Activity2.class);
+              //  startActivity(intent);
             }
         });button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Frist.this,Activity2.class);
+                Intent intent=new Intent(Frist.this,boom.class);
                 startActivity(intent);
             }
         });button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Frist.this,Activity2.class);
-                startActivity(intent);
+               // Intent intent=new Intent(Frist.this,Activity2.class);
+               // startActivity(intent);
             }
         });
 
