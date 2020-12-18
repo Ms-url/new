@@ -11,8 +11,12 @@ import androidx.navigation.fragment.NavHostFragment;
 
 public class F_2 extends Fragment {
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    private View view;
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_second, container, false);
+        return view;
     }
 }

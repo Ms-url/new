@@ -12,14 +12,17 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class F_main extends Fragment {
     private View view;
+    private List list=new ArrayList();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        view = inflater.inflate(R.layout.fragment_f3, container, false);
+        view = inflater.inflate(R.layout.fragment_first, container, false);
         return view;
     }
 }

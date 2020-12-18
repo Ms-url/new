@@ -6,51 +6,50 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/main_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10" >
-
-    </LinearLayout>
-
-
+    </FrameLayout>
     <LinearLayout
+        android:background="#BBC1C6"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="40dp"
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/bt_1_bell"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:background="@drawable/bell"
-            android:layout_marginLeft="66dp"
+            android:layout_marginLeft="68dp"
             android:layout_marginRight="36dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
             android:layout_height="match_parent"/>
 
         <ImageButton
+            android:id="@+id/bt_2_clock"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="48dp"
-            android:layout_marginRight="48dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/clock" />
 
         <ImageButton
+            android:id="@+id/bt_3_ealendar"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="66dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="68dp"
             android:layout_marginLeft="36dp"
-            android:background="@drawable/eale"
+            android:background="@drawable/ealendar"
            android:layout_height="match_parent"/>
     </LinearLayout>
-
 
 </LinearLayout>
