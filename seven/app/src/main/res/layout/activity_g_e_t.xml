@@ -7,8 +7,15 @@
     android:orientation="vertical"
     tools:context=".Url_1_GET">
 
-  <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/Url_get_RecyclerView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="36dp"
+        android:text="加载中..." />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Url_get_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
