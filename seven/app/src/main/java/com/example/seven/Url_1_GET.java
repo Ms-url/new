@@ -36,7 +36,6 @@ public class Url_1_GET extends AppCompatActivity {
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Url_1_GET.this);
                     recyclerView.setLayoutManager(layoutManager);
                     recyclerView.setAdapter(dataAdapter);
-                  //  list.clear();
                     Log.e("UIchange", "ui");
                     break;
             }
@@ -50,13 +49,13 @@ public class Url_1_GET extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.Url_get_RecyclerView);
         recyclerView.addItemDecoration(new SpacesItemDecoration(10));
-        sendGetNetRequest("https://www.wanandroid.com/article/list/0/json");
+        sendGetNetRequest("https://www.wanandroid.com/article/list/1/json");
         Log.e("connect", "ok");
-        /*JsonDataGet(responseData);
+       // JsonDataGet(responseData);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(dataAdapter);
-        list.clear();*/
+        list.clear();
         Log.e("finish", "finish");
     }
 
@@ -116,7 +115,7 @@ public class Url_1_GET extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(jsonData);
             JSONObject jsonObjectData = jsonObject.getJSONObject("data");
             JSONArray jsonArray_Datas = jsonObjectData.getJSONArray("datas");
-            for (int i = 0; i <= 19; i++) {
+            for (int i = 0; i <jsonData.length()-1; i++) {
                 JSONObject jsonObjectk = jsonArray_Datas.getJSONObject(i);
                 String title = jsonObjectk.getString("title");
                 String shower = jsonObjectk.getString("shareUser");

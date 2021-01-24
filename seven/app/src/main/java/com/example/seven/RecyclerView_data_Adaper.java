@@ -1,5 +1,6 @@
 package com.example.seven;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,21 @@ public class RecyclerView_data_Adaper extends RecyclerView.Adapter<RecyclerView_
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup  parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.url_recyclerview_item,parent,false);
         ViewHolder holer=new ViewHolder(view);
+
+        final ViewHolder holder = new ViewHolder(view);
+        holder.textView_link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int positions = holder.getAdapterPosition();
+                Url_get_data url_get_data = mdata.get(positions);
+                String link = url_get_data.getLink();
+/////////////////////////////////////////////////////////////////////////////////
+                Intent intent=new Intent(view.getContext(),web_activity.class);
+                intent.putExtra(link,"link");
+                view.getContext().startActivity(intent);
+/////////////////////////////////////////////////////////////////////////////////
+            }
+        });
         return holer;
     }
 

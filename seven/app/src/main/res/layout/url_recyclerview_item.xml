@@ -3,23 +3,28 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@color/purple_200"
+    android:background="#727577"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="53dp"/>
+        android:textColor="@color/black"
+        android:textSize="35dp" />
+
     <TextView
         android:id="@+id/item_shower"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="35dp"/>
+        android:textColor="#F44336"
+        android:textSize="30dp" />
+
     <TextView
         android:id="@+id/item_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"/>
+        android:textColor="#409DE6"
+        android:textSize="25dp" />
 
 </LinearLayout>

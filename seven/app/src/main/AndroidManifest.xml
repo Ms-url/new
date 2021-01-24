@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.seven">
-    <!--在这里添加权限申请-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 在这里添加权限申请 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/net_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:networkSecurityConfig="@xml/net_config"
         android:theme="@style/Theme.Seven">
-        <activity android:name=".Url_2_POST"/>
+        <activity android:name=".web_activity"></activity>
+        <activity android:name=".WebView" />
+        <activity android:name=".Url_2_POST" />
         <activity android:name=".Url_1_GET" />
         <activity android:name=".Url_Choise" />
         <activity android:name=".Limit_Choies" />

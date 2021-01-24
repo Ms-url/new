@@ -4,17 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Url_1_GET">
-
-    <TextView
+    tools:context=".web_activity">
+    <WebView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="36dp"
-        android:text="加载中..." />
+        android:id="@+id/web_view"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Url_get_RecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </FrameLayout>
