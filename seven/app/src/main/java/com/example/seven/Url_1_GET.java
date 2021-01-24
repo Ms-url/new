@@ -115,7 +115,7 @@ public class Url_1_GET extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(jsonData);
             JSONObject jsonObjectData = jsonObject.getJSONObject("data");
             JSONArray jsonArray_Datas = jsonObjectData.getJSONArray("datas");
-            for (int i = 0; i <jsonData.length()-1; i++) {
+            for (int i = 0; i <jsonData.length(); i++) {
                 JSONObject jsonObjectk = jsonArray_Datas.getJSONObject(i);
                 String title = jsonObjectk.getString("title");
                 String shower = jsonObjectk.getString("shareUser");

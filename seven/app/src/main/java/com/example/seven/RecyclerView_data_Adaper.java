@@ -1,6 +1,7 @@
 package com.example.seven;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,11 +42,12 @@ public class RecyclerView_data_Adaper extends RecyclerView.Adapter<RecyclerView_
             @Override
             public void onClick(View v) {
                 int positions = holder.getAdapterPosition();
-                Url_get_data url_get_data = mdata.get(positions);
+                Url_get_data url_get_data = mdata.get(positions+2);////////index=-1
                 String link = url_get_data.getLink();
+                Log.e("mesge_link",link);
 /////////////////////////////////////////////////////////////////////////////////
                 Intent intent=new Intent(view.getContext(),web_activity.class);
-                intent.putExtra(link,"link");
+                intent.putExtra(link,"links");
                 view.getContext().startActivity(intent);
 /////////////////////////////////////////////////////////////////////////////////
             }
