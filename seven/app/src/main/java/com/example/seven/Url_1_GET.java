@@ -48,7 +48,7 @@ public class Url_1_GET extends AppCompatActivity {
         setContentView(R.layout.activity_g_e_t);
 
         recyclerView = findViewById(R.id.Url_get_RecyclerView);
-        recyclerView.addItemDecoration(new SpacesItemDecoration(10));
+        recyclerView.addItemDecoration(new SpacesItemDecoration(12));
         sendGetNetRequest("https://www.wanandroid.com/article/list/1/json");
         Log.e("connect", "ok");
        // JsonDataGet(responseData);

@@ -35,14 +35,14 @@ public class RecyclerView_data_Adaper extends RecyclerView.Adapter<RecyclerView_
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup  parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.url_recyclerview_item,parent,false);
-        ViewHolder holer=new ViewHolder(view);
 
         final ViewHolder holder = new ViewHolder(view);
         holder.textView_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int positions = holder.getAdapterPosition();
-                Url_get_data url_get_data = mdata.get(positions+2);////////index=-1
+                int position = holder.getAdapterPosition();
+                Url_get_data url_get_data = mdata.get(position);
+                Log.e("weizhi", String.valueOf(position));
                 String link = url_get_data.getLink();
                 Log.e("mesge_link",link);
 /////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +52,7 @@ public class RecyclerView_data_Adaper extends RecyclerView.Adapter<RecyclerView_
 /////////////////////////////////////////////////////////////////////////////////
             }
         });
-        return holer;
+        return holder;
     }
 
     @Override
