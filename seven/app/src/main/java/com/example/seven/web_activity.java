@@ -22,6 +22,6 @@ public class web_activity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(link);
-      //  Log.e("web_view", link);  //?????  link没有传输过来
+        Log.e("web_view", link);  //?????  link没有传输过来
     }
 }

@@ -47,7 +47,7 @@ public class RecyclerView_data_Adaper extends RecyclerView.Adapter<RecyclerView_
                 Log.e("mesge_link",link);
 /////////////////////////////////////////////////////////////////////////////////
                 Intent intent=new Intent(view.getContext(),web_activity.class);
-                intent.putExtra(link,"links");
+                intent.putExtra("links",link);
                 view.getContext().startActivity(intent);
 /////////////////////////////////////////////////////////////////////////////////
             }
