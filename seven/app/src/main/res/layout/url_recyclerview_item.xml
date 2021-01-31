@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="136sp"
+    android:background="@drawable/circle"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout
+    android:layout_weight="5"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+
+        <TextView
+            android:layout_weight="5"
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:layout_height="match_parent"
+            android:singleLine="true" />
+
+    <TextView
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:textSize="30dp"
+        android:text="..."/>
+</LinearLayout>
+
+        <TextView
+            android:layout_weight="4"
+            android:id="@+id/item_shower"
+            android:layout_width="match_parent"
+            android:textColor="#F44336"
+            android:textSize="22dp"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:layout_weight="4"
+            android:id="@+id/item_link"
+            android:layout_width="match_parent"
+            android:textColor="#409DE6"
+            android:textSize="18dp"
+            android:layout_height="0dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
