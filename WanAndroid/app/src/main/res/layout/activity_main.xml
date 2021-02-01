@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,92 +7,154 @@
     android:orientation="vertical"
     android:background="@drawable/back_ground"
     tools:context=".MainActivity">
+<LinearLayout
+    android:layout_marginTop="56dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
-    <LinearLayout
-        android:background="@drawable/circle"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_in_page_title"
+        android:textColor="#F6F0F0"
+        android:textSize="66dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17000002" />
+</LinearLayout>
+<LinearLayout
+    android:layout_marginTop="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_margin="36dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:background="@drawable/edittext_circle"
-            android:layout_marginTop="36dp"
-            android:layout_marginRight="26dp"
-            android:layout_marginLeft="26dp"
-            android:layout_marginBottom="28dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                tools:srcCompat="@android:drawable/ic_lock_lock" />/>
-            <EditText
-                android:layout_weight="6.1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#EDE8E8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:background="@drawable/edittext_circle"
-            android:layout_marginRight="26dp"
-            android:layout_marginLeft="26dp"
-            android:layout_marginBottom="26dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                tools:srcCompat="@android:drawable/ic_lock_lock" />
-
-            <EditText
-                android:layout_weight="5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-            <CheckBox
-                android:layout_weight="0.1"
-                android:layout_width="38dp"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginBottom="36dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="26dp"
-                android:layout_marginRight="13dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle"
-                android:text="@string/register_button"
-                app:backgroundTint="@color/register_button" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginLeft="13dp"
+                android:layout_marginTop="36dp"
                 android:layout_marginRight="26dp"
-                android:layout_weight="1"
-                android:background="@drawable/circle"
-                app:backgroundTint="@color/log_in_button"
-                android:text="@string/log_in_button"/>
+                android:layout_marginBottom="28dp"
+                android:background="@drawable/edittext_circle"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    tools:srcCompat="@drawable/user2" />
+
+                <EditText
+                    android:id="@+id/edit_LOGIN_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:hint="@string/account_hint"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                android:layout_marginBottom="26dp"
+                android:background="@drawable/edittext_circle"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    tools:srcCompat="@drawable/lock" />
+
+                <EditText
+                    android:id="@+id/edit_LOGIN_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:hint="@string/password_hint"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/edit_eye"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    tools:srcCompat="@drawable/closeeye" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="36dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_register_intent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle"
+                    android:text="@string/register_button"
+                    app:backgroundTint="@color/register_button" />
+
+                <Button
+                    android:id="@+id/bt_log_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="26dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle"
+                    android:text="@string/log_in_button"
+                    app:backgroundTint="@color/log_in_button" />
+            </LinearLayout>
+
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
 
-    </LinearLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

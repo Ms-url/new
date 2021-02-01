@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">WanAndroid</string>
-    <string name="register_button">注 册</string>
-    <string name="log_in_button">登 录</string>
+    <string name="register_button">注册</string>
+    <string name="log_in_button">登录</string>
+    <string name="account_hint">账号</string>
+    <string name="password_hint">密码</string>
+    <string name="repassword_hint">确认密码</string>
+    <string name="log_in_page_title">LOG IN</string>
+    <string name="register_page_title">Register</string>
+    <string name="log_in_page_title2">wanAndroid</string>
+
 
 </resources>
