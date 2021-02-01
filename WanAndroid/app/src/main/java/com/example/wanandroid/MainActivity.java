@@ -4,9 +4,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -17,6 +19,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
     private EditText editText_account;
     private EditText editText_password;
@@ -25,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView_eye;
     protected boolean useThemestatusBarColor = false;
     protected boolean useStatusBarColor = true;
+    private POST_Connection post_connection;
+    private String responseData;
     private static int i = 2;
 
     @Override
@@ -36,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         button_log_in = findViewById(R.id.bt_log_in);
         button_register = findViewById(R.id.bt_register_intent);
         imageView_eye = findViewById(R.id.edit_eye);
+
+        SharedPreferences.Editor save_data = getSharedPreferences("user_data", MODE_PRIVATE).edit();
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -55,6 +66,42 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String username = editText_account.getText().toString().trim();
                 String password = editText_password.getText().toString().trim();
+
+                if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+                    Toast.makeText(MainActivity.this, "账号和密码不能为空", Toast.LENGTH_LONG).show();
+                } else {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put("username", username);
+                    map.put("password", password);
+
+                    new Thread(() -> {
+                        responseData = post_connection.sendGetNetRequest("https://www.wanandroid.com/user/login", map);
+                        try {
+                            JSONObject jsonObject = new JSONObject(responseData);
+                            int jsonerrorCode = jsonObject.getInt("errorCode");
+
+                            if (jsonerrorCode == -1) {
+                                String jsonerrorMsg = jsonObject.getString("errorMsg");
+                                Toast.makeText(MainActivity.this, jsonerrorMsg, Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                JSONObject jsonRightData = jsonObject.getJSONObject("data");
+                                String jsonUsername = jsonRightData.getString("username");
+                                int user_id = jsonRightData.getInt("id");
+
+                                save_data.putString("username", username);
+                                save_data.putString("password", password);
+                                save_data.putInt("user_id", user_id);
+
+                                Intent intent = new Intent(MainActivity.this, HomePage.class);
+                                startActivity(intent);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }).start();
+                }
+
             }
         });
 

@@ -25,7 +25,7 @@ public class POST_Connection {
         this.responseData = responseData;
     }
 
-    private String sendGetNetRequest(String murl, HashMap<String,String> params) {
+    protected String sendGetNetRequest(String murl, HashMap<String,String> params) {
         GET_Connection get_connection = new GET_Connection();
         try {
             URL url = new URL(murl);
