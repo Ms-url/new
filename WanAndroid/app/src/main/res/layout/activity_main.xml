@@ -11,13 +11,12 @@
 
     <TextView
         android:layout_gravity="center"
-
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/log_in_page_title"
         android:textColor="#F6F0F0"
-        android:textSize="56dp"/>
+        android:textSize="48dp"/>
 
 
             <LinearLayout

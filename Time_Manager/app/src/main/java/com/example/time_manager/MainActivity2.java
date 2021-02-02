@@ -1,4 +1,4 @@
-package com.example.wanandroid;
+package com.example.time_manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 

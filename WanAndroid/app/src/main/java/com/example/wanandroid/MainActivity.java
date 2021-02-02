@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 int mlongth = editText_password.length();
                 if (mlongth==0) {
                 }else if (mlongth<6&&mlongth>0){
-                    editText_account.setHint("密码不能为空");//不能设置int，会闪退
+                    editText_password.setHint("密码不能为空");//不能设置int，会闪退
                     editText_password.setHintTextColor(Color.parseColor("#FA1065"));
                     imageView_clock.setImageResource(R.drawable.red_clock);
                 }else {
@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
                 int mlongth = editText_account.length();
                 if (mlongth==0) {
                 }else if (mlongth<4&&mlongth>0){
-                    editText_password.setHint("账号不能为空");//不能设置int，会闪退
+                    editText_account.setHint("账号不能为空");//不能设置int，会闪退
                     editText_account.setHintTextColor(Color.parseColor("#FA1065"));
                     imageView_user.setImageResource(R.drawable.user_red);
                 }else {

@@ -66,9 +66,9 @@ public class Register extends AppCompatActivity {
         editText_repassword = findViewById(R.id.edit_Register_repassword);
         button_register = findViewById(R.id.bt_Register);
 
-        user_accont=findViewById(R.id.register_user_u);
-        pass_clock=findViewById(R.id.register_pass_clock);
-        repass_clock=findViewById(R.id.register_repass_clock);
+        user_accont = findViewById(R.id.register_user_u);
+        pass_clock = findViewById(R.id.register_pass_clock);
+        repass_clock = findViewById(R.id.register_repass_clock);
         bt_back = findViewById(R.id.imageView2);
         imageView_eye_password = findViewById(R.id.password_eye);
         imageView_eye_repassword = findViewById(R.id.repassword_eye);
@@ -82,18 +82,20 @@ public class Register extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 int mlongth = editText_password.length();
-                if (mlongth==0) {
-                }else if (mlongth<6&&mlongth>0){
-                    editText_account.setHint("密码不能为空");//不能设置int，会闪退
+                if (mlongth == 0) {
+                } else if (mlongth < 6 && mlongth > 0) {
+                    editText_password.setHint("密码不能为空");//不能设置int，会闪退
                     editText_password.setHintTextColor(Color.parseColor("#FA1065"));
                     pass_clock.setImageResource(R.drawable.red_clock);
-                }else {
+                } else {
                     pass_clock.setImageResource(R.drawable.lock);
                 }
             }
@@ -103,18 +105,20 @@ public class Register extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 int mlongth = editText_account.length();
-                if (mlongth==0) {
-                }else if (mlongth<4&&mlongth>0){
-                    editText_password.setHint("账号不能为空");//不能设置int，会闪退
+                if (mlongth == 0) {
+                } else if (mlongth < 4 && mlongth > 0) {
+                    editText_account.setHint("账号不能为空");//不能设置int，会闪退
                     editText_account.setHintTextColor(Color.parseColor("#FA1065"));
                     user_accont.setImageResource(R.drawable.user_red);
-                }else {
+                } else {
                     user_accont.setImageResource(R.drawable.user);
                 }
             }
@@ -123,18 +127,20 @@ public class Register extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
+
             @Override
             public void afterTextChanged(Editable s) {
                 int mlongth = editText_repassword.length();
-                if (mlongth==0) {
-                }else if (mlongth<6&&mlongth>0){
+                if (mlongth == 0) {
+                } else if (mlongth < 6 && mlongth > 0) {
                     editText_repassword.setHint("密码不能为空");//不能设置int，会闪退
                     editText_repassword.setHintTextColor(Color.parseColor("#FA1065"));
                     repass_clock.setImageResource(R.drawable.red_clock);
-                }else {
+                } else {
                     repass_clock.setImageResource(R.drawable.lock);
                 }
             }
@@ -146,14 +152,14 @@ public class Register extends AppCompatActivity {
                 String password = editText_password.getText().toString().trim();
                 String repassword = editText_repassword.getText().toString().trim();
                 int mlongth = editText_account.length();
-                int mlongth_u=editText_account.length();
+                int mlongth_u = editText_account.length();
                 Log.e("点击", "进入");
 
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password) || TextUtils.isEmpty(repassword)) {
                     Toast.makeText(Register.this, "账号和密码不能为空", Toast.LENGTH_SHORT).show();
-                }else if (mlongth<6) {
+                } else if (mlongth < 6) {
                     Toast.makeText(Register.this, "密码长度必须打于6", Toast.LENGTH_SHORT).show();
-                }else if (mlongth_u<4){
+                } else if (mlongth_u < 4) {
                     Toast.makeText(Register.this, "账号长度必须打于4", Toast.LENGTH_SHORT).show();
                 } else if (password.equals(repassword)) {
                     HashMap<String, String> map = new HashMap<>();
@@ -247,4 +253,5 @@ public class Register extends AppCompatActivity {
             }
         }).start();
     }
+
 }
