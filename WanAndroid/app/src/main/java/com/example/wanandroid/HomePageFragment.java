@@ -22,6 +22,8 @@ public class HomePageFragment extends Fragment {
     private View view;
     private ViewPager home_banner;
     private ViewPager home_content;
+    private List<View> list=new ArrayList<>();
+    private view_PagerAdapter viewpageradapter=new view_PagerAdapter(list);
     TabLayout tabLayout;
     List<Fragment> fragmentList=new ArrayList<>();
     List<String> fragmentTitle=new ArrayList<>();
@@ -34,6 +36,10 @@ public class HomePageFragment extends Fragment {
         home_banner = view.findViewById(R.id.home_banner);
         home_content = view.findViewById(R.id.home_content);
         tabLayout=view.findViewById(R.id.tabs_1);
+
+        list.add(LayoutInflater.from(getContext()).inflate(R.layout.view_pager_item_1,null,false));
+        list.add(LayoutInflater.from(getContext()).inflate(R.layout.view_pager_item_2,null,false));
+        home_banner.setAdapter(viewpageradapter);
 
         fragmentTitle.add("文章");
         fragmentTitle.add("常用网站");
