@@ -26,7 +26,7 @@ public class POST_Connection {
     }
 
     protected String sendGetNetRequest(String murl, HashMap<String,String> params) {
-        GET_Connection get_connection = new GET_Connection();
+        POST_Connection post_connection = new POST_Connection();
         try {
             URL url = new URL(murl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -47,7 +47,7 @@ public class POST_Connection {
 
             InputStream in = connection.getInputStream();
             Log.e("send", "ok");
-            get_connection.setResponseData(StreamToString(in));
+            post_connection.setResponseData(StreamToString(in));
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -58,7 +58,7 @@ public class POST_Connection {
             e.printStackTrace();
             Log.e("time2", "请求超时");
         }
-        String finally_responseData = get_connection.getResponseData();
+        String finally_responseData = post_connection.getResponseData();
         return finally_responseData;
     }
 

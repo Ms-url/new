@@ -19,45 +19,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.00999999"
         app:srcCompat="@drawable/backbt" />
-<LinearLayout
-    android:layout_marginTop="34dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:orientation="horizontal">
 
     <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_page_title"
         android:textColor="@color/white"
         android:textSize="52dp" />
-</LinearLayout>
-
-<LinearLayout
-
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="36dp"
-        app:cardCornerRadius="26dp"
-        app:cardElevation="36dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#EDE8E8"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,9 +44,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.8"
-                    tools:srcCompat="@drawable/user2" />
+                    android:src="@drawable/user2" />
 
                 <EditText
+                    android:maxLength="16"
+                    android:maxLines="1"
+                    android:id="@+id/edit_Register_account"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
@@ -101,9 +75,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.8"
-                    tools:srcCompat="@drawable/lock" />
+                    android:src="@drawable/lock" />
 
                 <EditText
+                    android:maxLength="18"
+                    android:maxLines="1"
+                    android:id="@+id/edit_Register_password"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
@@ -114,7 +91,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    tools:srcCompat="@drawable/closeeye" />
+                    android:src="@drawable/closeeye" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -135,9 +112,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.8"
-                    tools:srcCompat="@drawable/lock" />
+                    android:src="@drawable/lock" />
 
                 <EditText
+                    android:maxLength="18"
+                    android:maxLines="1"
+                    android:id="@+id/edit_Register_repassword"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
@@ -148,35 +128,22 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    tools:srcCompat="@drawable/closeeye" />
+                   android:src="@drawable/closeeye" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2" />
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="36dp"
-                android:orientation="horizontal">
-
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:id="@+id/bt_Register"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
                     android:layout_marginLeft="26dp"
                     android:layout_marginRight="26dp"
-                    android:layout_weight="1"
+
                     android:background="@drawable/circle"
                     android:text="@string/register_button"
                     app:backgroundTint="@color/register_button" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</LinearLayout>
 
 </LinearLayout>
