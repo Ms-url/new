@@ -12,7 +12,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -146,6 +148,48 @@ public class MainActivity extends AppCompatActivity {
                     imageView_eye.setImageResource(R.drawable.closeeye);
                     editText_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     i++;
+                }
+            }
+        });
+
+        editText_password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                int mlongth = editText_password.length();
+                if (mlongth==0) {
+                }else if (mlongth<6&&mlongth>0){
+                    editText_account.setHint("密码不能为空");//不能设置int，会闪退
+                    editText_password.setHintTextColor(Color.parseColor("#FA1065"));
+                    imageView_clock.setImageResource(R.drawable.red_clock);
+                }else {
+                    imageView_clock.setImageResource(R.drawable.lock);
+                }
+            }
+        });
+
+        editText_account.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                int mlongth = editText_account.length();
+                if (mlongth==0) {
+                }else if (mlongth<4&&mlongth>0){
+                    editText_password.setHint("账号不能为空");//不能设置int，会闪退
+                    editText_account.setHintTextColor(Color.parseColor("#FA1065"));
+                    imageView_user.setImageResource(R.drawable.user_red);
+                }else {
+                    imageView_user.setImageResource(R.drawable.user);
                 }
             }
         });

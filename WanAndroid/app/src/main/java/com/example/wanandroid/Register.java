@@ -4,10 +4,13 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -27,7 +30,10 @@ public class Register extends AppCompatActivity {
     private EditText editText_password;
     private EditText editText_repassword;
     private Button button_register;
+    private ImageView pass_clock;
+    private ImageView repass_clock;
     private ImageView bt_back;
+    private ImageView user_accont;
     private ImageView imageView_eye_password;
     private ImageView imageView_eye_repassword;
     private POST_Connection post_connection = new POST_Connection();
@@ -60,6 +66,9 @@ public class Register extends AppCompatActivity {
         editText_repassword = findViewById(R.id.edit_Register_repassword);
         button_register = findViewById(R.id.bt_Register);
 
+        user_accont=findViewById(R.id.register_user_u);
+        pass_clock=findViewById(R.id.register_pass_clock);
+        repass_clock=findViewById(R.id.register_repass_clock);
         bt_back = findViewById(R.id.imageView2);
         imageView_eye_password = findViewById(R.id.password_eye);
         imageView_eye_repassword = findViewById(R.id.repassword_eye);
@@ -69,17 +78,84 @@ public class Register extends AppCompatActivity {
             actionBar.hide();
         }
 
+        editText_password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                int mlongth = editText_password.length();
+                if (mlongth==0) {
+                }else if (mlongth<6&&mlongth>0){
+                    editText_account.setHint("密码不能为空");//不能设置int，会闪退
+                    editText_password.setHintTextColor(Color.parseColor("#FA1065"));
+                    pass_clock.setImageResource(R.drawable.red_clock);
+                }else {
+                    pass_clock.setImageResource(R.drawable.lock);
+                }
+            }
+        });
+
+        editText_account.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                int mlongth = editText_account.length();
+                if (mlongth==0) {
+                }else if (mlongth<4&&mlongth>0){
+                    editText_password.setHint("账号不能为空");//不能设置int，会闪退
+                    editText_account.setHintTextColor(Color.parseColor("#FA1065"));
+                    user_accont.setImageResource(R.drawable.user_red);
+                }else {
+                    user_accont.setImageResource(R.drawable.user);
+                }
+            }
+        });
+        editText_repassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                int mlongth = editText_repassword.length();
+                if (mlongth==0) {
+                }else if (mlongth<6&&mlongth>0){
+                    editText_repassword.setHint("密码不能为空");//不能设置int，会闪退
+                    editText_repassword.setHintTextColor(Color.parseColor("#FA1065"));
+                    repass_clock.setImageResource(R.drawable.red_clock);
+                }else {
+                    repass_clock.setImageResource(R.drawable.lock);
+                }
+            }
+        });
         button_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = editText_account.getText().toString().trim();
                 String password = editText_password.getText().toString().trim();
                 String repassword = editText_repassword.getText().toString().trim();
+                int mlongth = editText_account.length();
+                int mlongth_u=editText_account.length();
                 Log.e("点击", "进入");
 
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password) || TextUtils.isEmpty(repassword)) {
                     Toast.makeText(Register.this, "账号和密码不能为空", Toast.LENGTH_SHORT).show();
-                } else if(password.equals(repassword)){
+                }else if (mlongth<6) {
+                    Toast.makeText(Register.this, "密码长度必须打于6", Toast.LENGTH_SHORT).show();
+                }else if (mlongth_u<4){
+                    Toast.makeText(Register.this, "账号长度必须打于4", Toast.LENGTH_SHORT).show();
+                } else if (password.equals(repassword)) {
                     HashMap<String, String> map = new HashMap<>();
                     map.put("username", username);
                     map.put("password", password);
@@ -102,15 +178,15 @@ public class Register extends AppCompatActivity {
                                 showResponse(jsonerrorMsg, 1);
                                 Log.e("错误", "信息");
                             } else {
-                                Log.e("注册","成功");
+                                Log.e("注册", "成功");
                                 showResponse(null, 2);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }).start();
-                }else {
-                    Toast.makeText(Register.this,"两次输入的密码不同",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(Register.this, "两次输入的密码不同", Toast.LENGTH_SHORT).show();
                 }
 
             }

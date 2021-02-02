@@ -42,10 +42,11 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/register_user_u"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.8"
-                android:src="@drawable/user2" />
+                android:src="@drawable/user" />
 
             <EditText
                 android:id="@+id/edit_Register_account"
@@ -74,6 +75,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/register_pass_clock"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.8"
@@ -113,6 +115,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/register_repass_clock"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.8"

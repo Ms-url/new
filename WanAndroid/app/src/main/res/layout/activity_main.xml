@@ -35,7 +35,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.8"
-                    android:src="@drawable/user2"
+                    android:src="@drawable/user"
                     tools:visibility="visible"/>
 
                 <EditText
