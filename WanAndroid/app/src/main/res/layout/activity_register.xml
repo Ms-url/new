@@ -1,149 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/back_ground"
+    android:orientation="vertical"
     tools:context=".Register">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.00999999"
         app:srcCompat="@drawable/backbt" />
 
     <TextView
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="66dp"
+        android:layout_gravity="center_horizontal"
         android:text="@string/register_page_title"
         android:textColor="@color/white"
-        android:textSize="52dp" />
+        android:textSize="48dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginRight="26dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/edittext_circle"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:src="@drawable/user2" />
+
+            <EditText
+                android:id="@+id/edit_Register_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:hint="@string/account_hint"
+                android:maxLength="16"
+                android:inputType="text"
+                android:lines="1"
+                android:textSize="16sp" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            android:layout_marginBottom="26dp"
+            android:background="@drawable/edittext_circle"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:src="@drawable/lock" />
+
+            <EditText
+                android:id="@+id/edit_Register_password"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="26dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginRight="26dp"
-                android:layout_marginBottom="28dp"
-                android:background="@drawable/edittext_circle"
-                android:orientation="horizontal">
+                android:layout_weight="5"
+                android:hint="@string/password_hint"
+                android:maxLength="18"
+                android:inputType="text"
+                android:lines="1"
+                android:textSize="16sp" />
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:src="@drawable/user2" />
-
-                <EditText
-                    android:maxLength="16"
-                    android:maxLines="1"
-                    android:id="@+id/edit_Register_account"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:hint="@string/account_hint"
-                    android:textSize="16sp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.7" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/password_eye"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:src="@drawable/closeeye" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            android:layout_marginBottom="26dp"
+            android:background="@drawable/edittext_circle"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:src="@drawable/lock" />
+
+            <EditText
+                android:id="@+id/edit_Register_repassword"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="26dp"
-                android:layout_marginRight="26dp"
-                android:layout_marginBottom="26dp"
-                android:background="@drawable/edittext_circle"
-                android:orientation="horizontal">
+                android:layout_weight="5"
+                android:hint="@string/repassword_hint"
+                android:maxLength="18"
+                android:inputType="text"
+                android:lines="1"
+                android:textSize="16sp" />
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:src="@drawable/lock" />
-
-                <EditText
-                    android:maxLength="18"
-                    android:maxLines="1"
-                    android:id="@+id/edit_Register_password"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:hint="@string/password_hint"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:src="@drawable/closeeye" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/repassword_eye"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:src="@drawable/closeeye" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="26dp"
-                android:layout_marginRight="26dp"
-                android:layout_marginBottom="26dp"
-                android:background="@drawable/edittext_circle"
-                android:orientation="horizontal">
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2" />
+        </LinearLayout>
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:src="@drawable/lock" />
+        <Button
+            android:id="@+id/bt_Register"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
 
-                <EditText
-                    android:maxLength="18"
-                    android:maxLines="1"
-                    android:id="@+id/edit_Register_repassword"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:hint="@string/repassword_hint"
-                    android:textSize="16sp" />
+            android:background="@drawable/circle"
+            android:text="@string/register_button"
+            app:backgroundTint="@color/register_button" />
+    </LinearLayout>
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                   android:src="@drawable/closeeye" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2" />
-            </LinearLayout>
-                <Button
-                    android:id="@+id/bt_Register"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_marginLeft="26dp"
-                    android:layout_marginRight="26dp"
-
-                    android:background="@drawable/circle"
-                    android:text="@string/register_button"
-                    app:backgroundTint="@color/register_button" />
-
-</LinearLayout>
+</FrameLayout>

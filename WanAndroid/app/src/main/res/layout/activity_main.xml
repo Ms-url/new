@@ -40,7 +40,8 @@
 
                 <EditText
                     android:maxLength="16"
-                    android:maxLines="1"
+                    android:inputType="text"
+                    android:lines="1"
                     android:id="@+id/edit_LOGIN_account"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -71,7 +72,8 @@
                     android:src="@drawable/lock" />
 
                 <EditText
-                    android:maxLines="1"
+                    android:inputType="text"
+                    android:lines="1"
                     android:maxLength="18"
                     android:id="@+id/edit_LOGIN_password"
                     android:layout_width="0dp"

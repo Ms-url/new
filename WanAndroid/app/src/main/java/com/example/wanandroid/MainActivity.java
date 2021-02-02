@@ -88,12 +88,11 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("点击", "进入");
 
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+                    Toast.makeText(MainActivity.this, "账号和密码不能为空", Toast.LENGTH_SHORT).show();
                 } else {
-                    Log.e("可能错误", "进入");
                     HashMap<String, String> map = new HashMap<>();
                     map.put("username", username);
                     map.put("password", password);
-                    Toast.makeText(MainActivity.this, "entry222", Toast.LENGTH_SHORT).show();
                     Log.e("分支", "进入");
                     new Thread(() -> {
                         Log.e("新线程", "开启");
