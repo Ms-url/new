@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecyclerViewFragment_2">
+    tools:context=".RecyclerViewFragment_web">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_web"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

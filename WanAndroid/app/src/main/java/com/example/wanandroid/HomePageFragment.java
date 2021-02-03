@@ -44,7 +44,7 @@ public class HomePageFragment extends Fragment {
         fragmentTitle.add("文章");
         fragmentTitle.add("常用网站");
         fragmentList.add(new RecyclerViewFragment());
-        fragmentList.add(new RecyclerViewFragment_2());
+        fragmentList.add(new RecyclerViewFragment_web());
 
         home_content.setAdapter(new ViewPagerAdapter(getChildFragmentManager(),
                 ViewPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)) ;

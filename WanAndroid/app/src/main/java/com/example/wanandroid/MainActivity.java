@@ -67,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
         button_register = findViewById(R.id.bt_Register_intent);
         imageView_eye = findViewById(R.id.edit_eye);
 
+      /*  SharedPreferences save_da = getSharedPreferences("user_data", MODE_PRIVATE);
+        String u=save_da.getString("username","");
+        String p=save_da.getString("pass","");
+        if (!TextUtils.isEmpty(u)&&!TextUtils.isEmpty(p)){
+            Intent intent = new Intent(MainActivity.this, HomePage.class);
+            startActivity(intent);
+        }*/
+
         SharedPreferences.Editor save_data = getSharedPreferences("user_data", MODE_PRIVATE).edit();
 
         ActionBar actionBar = getSupportActionBar();
@@ -89,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 String password = editText_password.getText().toString().trim();
                 Log.e("点击", "进入");
 
-                if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+                if (TextUtils.isEmpty(username) ||TextUtils.isEmpty(password)) {
                     Toast.makeText(MainActivity.this, "账号和密码不能为空", Toast.LENGTH_SHORT).show();
                 } else {
                     HashMap<String, String> map = new HashMap<>();

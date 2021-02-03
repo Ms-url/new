@@ -8,8 +8,6 @@
     <string name="log_in_page_title">LOG IN</string>
     <string name="register_page_title">Register</string>
     <string name="log_in_page_title2">wanAndroid</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

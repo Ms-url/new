@@ -13,21 +13,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragment_web extends Fragment {
     private View view;
     private RecyclerView recyclerView;
-    private List<UsefulData> list = new ArrayList<>();
-    private RecyclerViewAdaper_1 dataAdapter = new RecyclerViewAdaper_1(list);
+    private List<WebData> list=new ArrayList<>();
+    private RecyclerViewApater_web dataAdapter=new RecyclerViewApater_web(list);
     GET_Connection get_connection=new GET_Connection();
-    JsonAnalyze jsonAnalyze=new JsonAnalyze();
     private String responseData;
-
+    JsonAnalyze jsonAnalyze =new JsonAnalyze();
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -41,16 +41,21 @@ public class RecyclerViewFragment extends Fragment {
         }
     };
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_recycler_view, container, false);
-        recyclerView=view.findViewById(R.id.recycler_v);
-        recyclerView.addItemDecoration(new SpacesItemDecoration(12));
+        view = inflater.inflate(R.layout.fragment_recycler_view_2, container, false);
+        recyclerView=view.findViewById(R.id.recycler_web);
+        recyclerView.addItemDecoration(new SpacesItemDecoration(14));
 
         new Thread(() ->{
-            responseData = get_connection.sendGetNetRequest("https://www.wanandroid.com/article/list/0/json");
+            responseData = get_connection.sendGetNetRequest("https://www.wanandroid.com/friend/json");
             try {
-                jsonAnalyze.JsonDataGet_article(responseData, list);
+                jsonAnalyze.JsonDataGet_web(responseData, list);
                 showResponse();
             }catch (Exception e){
 
@@ -58,12 +63,6 @@ public class RecyclerViewFragment extends Fragment {
         }).start();
 
         return view;
-    }
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     private void showResponse() {
@@ -76,6 +75,4 @@ public class RecyclerViewFragment extends Fragment {
             }
         }).start();
     }
-
-
 }
