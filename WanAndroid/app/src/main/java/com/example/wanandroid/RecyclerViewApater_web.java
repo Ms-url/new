@@ -58,7 +58,9 @@ public class RecyclerViewApater_web extends RecyclerView.Adapter<RecyclerViewApa
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewApater_web.ViewHolder holder, int position) {
-
+        WebData webData=mdata.get(position);
+        holder.textView_name.setText(webData.getName());
+        holder.textView_category.setText(webData.getCategory());
     }
 
     @Override

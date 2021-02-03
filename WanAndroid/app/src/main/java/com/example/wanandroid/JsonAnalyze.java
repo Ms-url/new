@@ -1,5 +1,7 @@
 package com.example.wanandroid;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,11 +12,12 @@ public class JsonAnalyze {
 
     protected void JsonDataGet_web(String jsonData, List<WebData> list) {
         try {
+            Log.e("json解析","常用网站");
             JSONObject jsonObject = new JSONObject(jsonData);
-            JSONObject jsonObjectData = jsonObject.getJSONObject("data");
-            JSONArray jsonArray_Datas = jsonObjectData.getJSONArray("datas");
+            JSONArray jsonArray_Data = jsonObject.getJSONArray("data");
+
             for (int i = 0; i < jsonData.length(); i++) {
-                JSONObject jsonObjectk = jsonArray_Datas.getJSONObject(i);
+                JSONObject jsonObjectk = jsonArray_Data.getJSONObject(i);
                 String link = jsonObjectk.getString("link");
                 String name = jsonObjectk.getString("name");
                 String category = jsonObjectk.getString("category");
@@ -27,10 +30,13 @@ public class JsonAnalyze {
 
     protected void JsonDataGet_article(String jsonData, List<UsefulData> list) {
         try {
+            Log.e("json解析","文章");
             JSONObject jsonObject = new JSONObject(jsonData);
-            JSONArray jsonArray_Data = jsonObject.getJSONArray("data");
+            JSONObject jsonObjectData = jsonObject.getJSONObject("data");
+            JSONArray jsonArray_Datas = jsonObjectData.getJSONArray("datas");
+
             for (int i = 0; i < jsonData.length(); i++) {
-                JSONObject jsonObjectk = jsonArray_Data.getJSONObject(i);
+                JSONObject jsonObjectk = jsonArray_Datas.getJSONObject(i);
                 String title = jsonObjectk.getString("title");
                 String niceDate = jsonObjectk.getString("niceDate");
                 String link = jsonObjectk.getString("link");

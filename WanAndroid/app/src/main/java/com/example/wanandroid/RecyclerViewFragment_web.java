@@ -53,6 +53,7 @@ public class RecyclerViewFragment_web extends Fragment {
         recyclerView.addItemDecoration(new SpacesItemDecoration(14));
 
         new Thread(() ->{
+            Log.e("线程web","begin");
             responseData = get_connection.sendGetNetRequest("https://www.wanandroid.com/friend/json");
             try {
                 jsonAnalyze.JsonDataGet_web(responseData, list);

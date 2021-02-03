@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="14dp"
             android:id="@+id/web_item_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -25,6 +25,9 @@
 
         <TextView
             android:id="@+id/web_item_category"
+            android:gravity="center"
+            android:layout_marginRight="14dp"
+            android:textSize="19dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
     </LinearLayout>

@@ -50,6 +50,7 @@ public class RecyclerViewFragment extends Fragment {
         new Thread(() ->{
             responseData = get_connection.sendGetNetRequest("https://www.wanandroid.com/article/list/0/json");
             try {
+                Log.e("线程article","begin");
                 jsonAnalyze.JsonDataGet_article(responseData, list);
                 showResponse();
             }catch (Exception e){
