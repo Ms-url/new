@@ -16,6 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     <EditText
+        android:inputType="text"
+        android:lines="1"
         android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -27,12 +29,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:background="#F8FAFB"
+        android:background="@color/tab_background"
+        app:tabTextAppearance="@style/TabTextStyle"
         app:tabGravity="fill"
+        app:tabTextColor="@color/tab_text"
         app:tabIndicatorColor="@color/teal_200"
         app:tabIndicatorHeight="5dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="#F44336" />
+        app:tabSelectedTextColor="@color/teal_200" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/home_content"

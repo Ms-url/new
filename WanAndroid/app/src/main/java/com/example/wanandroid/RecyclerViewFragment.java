@@ -45,7 +45,7 @@ public class RecyclerViewFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_recycler_view, container, false);
         recyclerView=view.findViewById(R.id.recycler_v);
-        recyclerView.addItemDecoration(new SpacesItemDecoration(12));
+        recyclerView.addItemDecoration(new SpacesItemDecoration(14));
 
         new Thread(() ->{
             responseData = get_connection.sendGetNetRequest("https://www.wanandroid.com/article/list/0/json");

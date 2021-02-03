@@ -8,6 +8,7 @@
     <string name="log_in_page_title">LOG IN</string>
     <string name="register_page_title">Register</string>
     <string name="log_in_page_title2">wanAndroid</string>
+    <string name="dot">  ·  </string>
 
 
 </resources>

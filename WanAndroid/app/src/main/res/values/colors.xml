@@ -10,4 +10,9 @@
     <color name="register_button">#3F51B5</color>
     <color name="log_in_button">#3F51B5</color>
     <color name="web_item">#BCBABA</color>
+    <color name="tab_text">#7A7A7A</color>
+    <color name="recycler_view_background_1">#CFCECE</color>
+    <color name="recycler_view_background_2">#F4F1F1</color>
+    <color name="tab_background">#F8FAFB</color>
+    <color name="article_item_title">#303030</color>
 </resources>

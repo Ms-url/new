@@ -12,10 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WanAndroid">
-        <activity android:name=".web_activity"></activity>
-        <activity android:name=".HomePage" />
+        <activity android:name=".web_activity"/>
         <activity android:name=".Register" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".HomePage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
